@@ -1,0 +1,154 @@
+/* Variáveis de cores para facilitar */
+:root {
+    --verde-azulado: #2c7a7b;
+    --verde-claro: #f0fff4;
+    --lilas: #d6bcfa;
+    --texto: #2d3748;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--verde-claro);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* Menu fixo no topo */
+header {
+    background-color: var(--verde-azulado);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--lilas);
+}
+
+/* Seção de Destaque (Hero) */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--verde-azulado);
+    color: white;
+    padding: 20px;
+}
+
+/* Estilo geral das seções */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.bg-alt {
+    background-color: #ffffff; /* Fundo branco para diferenciar seções */
+}
+
+h2 {
+    color: var(--verde-azulado);
+    margin-bottom: 20px;
+}
+
+ul {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Cards da Economia Circular */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: var(--lilas);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Botão e Interação */
+button {
+    background-color: var(--verde-azulado);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: var(--verde-azulado);
+    padding: 10px;
+    border: 2px dashed var(--lilas);
+}
+
+/* Responsividade: Ajustes para celular */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+    nav ul li a {
+        margin: 0 10px;
+    }
+}
