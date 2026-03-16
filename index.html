@@ -8,79 +8,67 @@
 </head>
 <body>
 
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <header>
         <nav>
-            <div class="logo">EcoFuturo</div>
+            <div class="logo">EcoEnsino</div>
             <ul>
-                <li><a href="#inicio">Início</a></li>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#circular">Economia Circular</a></li>
                 <li><a href="#producao">Produção</a></li>
-                <li><a href="#ambiente">Meio Ambiente</a></li>
-                <li><a href="#tecnologia">Tecnologia</a></li>
+                <li><a href="#contato">Saiba Mais</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <h1>O Futuro Sustentável</h1>
-            <p>O equilíbrio vital entre a produção humana e a preservação do planeta.</p>
-        </section>
-
-        <section class="content">
-            <h2>O Grande Desafio</h2>
-            <p>Como continuar produzindo o que a sociedade precisa sem esgotar os recursos da Terra?</p>
-        </section>
-
-        <section id="producao" class="content bg-alt">
-            <h2>Produção Consciente</h2>
-            <ul>
-                <li>Redução de desperdício na fonte.</li>
-                <li>Uso de matérias-primas renováveis.</li>
-                <li>Eficiência energética nas fábricas.</li>
-            </ul>
-        </section>
-
-        <section id="ambiente" class="content">
-            <h2>Respeito ao Ecossistema</h2>
-            <p>A natureza não é uma fonte infinita. Precisamos respeitar os ciclos biológicos e a biodiversidade.</p>
-        </section>
-
-        <section class="content bg-alt">
-            <h2>Economia Circular</h2>
-            <p>Diferente do modelo "extrair-usar-descartar", aqui o foco é:</p>
-            <div class="cards">
-                <div class="card">Reduzir</div>
-                <div class="card">Reutilizar</div>
-                <div class="card">Reciclar</div>
+        <section id="home" class="parallax section-1">
+            <div class="content-box">
+                <h1>Futuro Sustentável</h1>
+                <p>O equilíbrio entre Produção e Meio Ambiente</p>
             </div>
         </section>
 
-        <section id="tecnologia" class="content">
-            <h2>Tecnologias Verdes</h2>
-            <p>Inovações que ajudam o planeta:</p>
+        <section id="intro" class="info-section">
+            <h2>Bem-vindo à Jornada Verde</h2>
+            <p>Entenda como podemos transformar nossa forma de consumir e produzir para proteger o planeta.</p>
+        </section>
+
+        <section id="circular" class="info-section alt-bg">
+            <h2>O que é Economia Circular?</h2>
+                        <div class="grid-container">
+                <div class="card">
+                    <h3>Produção</h3>
+                    <p>Design focado em durabilidade e reaproveitamento.</p>
+                </div>
+                <div class="card">
+                    <h3>Uso Consciente</h3>
+                    <p>Consumir apenas o necessário e cuidar dos produtos.</p>
+                </div>
+                <div class="card">
+                    <h3>Reciclagem</h3>
+                    <p>Transformar o que seria lixo em matéria-prima novamente.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Pilar da Sustentabilidade</h2>
             <ul>
-                <li>Energia Solar e Eólica.</li>
-                <li>Carros elétricos e bioplásticos.</li>
-                <li>Inteligência Artificial para otimizar recursos.</li>
+                <li>Redução de emissão de CO2</li>
+                <li>Preservação de recursos hídricos</li>
+                <li>Justiça social na produção</li>
             </ul>
+            <button id="btnInterativo">Clique para uma dica verde!</button>
         </section>
 
-        <section class="content bg-alt">
-            <h2>Nosso Papel</h2>
-            <p>O consumo consciente é a maior arma do cidadão para pressionar por mudanças.</p>
-        </section>
-
-        <section class="content">
-            <h2>Conclusão</h2>
-            <p>O equilíbrio é possível, mas exige ação imediata de governos, empresas e de você!</p>
-            
-            <button id="btnMensagem">Clique para uma dica sustentável!</button>
-            <p id="mensagemOculta" class="hidden"></p>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 - Desenvolvido por [Seu Nome] - 3º Ano do Ensino Médio</p>
+        <p>&copy; 2026 - Desenvolvido por um Estudante do 3º Ano</p>
     </footer>
 
     <script src="script.js"></script>

@@ -1,9 +1,9 @@
-/* Variáveis de cores para facilitar */
+/* Definição de cores e fontes */
 :root {
-    --verde-azulado: #2c7a7b;
-    --verde-claro: #f0fff4;
-    --lilas: #d6bcfa;
-    --texto: #2d3748;
+    --verde-azulado: #3b9696;
+    --lilas: #c8a2c8;
+    --verde-claro: #c4fac4;
+    --branco: #ffffff;
 }
 
 * {
@@ -13,33 +13,48 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: var(--verde-claro);
-    color: var(--texto);
-    line-height: 1.6;
+/* Efeito de Carregamento (Loading Spinner) */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-/* Menu fixo no topo */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--lilas);
+    border-top: 5px solid var(--verde-azulado);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Menu Responsivo */
 header {
     background-color: var(--verde-azulado);
     padding: 1rem;
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
-}
-
-.logo {
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
 }
 
 nav ul {
@@ -51,104 +66,66 @@ nav ul li a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    transition: 0.3s;
+    font-weight: bold;
+    transition: 0.3s; /* Suaviza o hover */
 }
 
+/* Hover Effect no Menu */
 nav ul li a:hover {
-    color: var(--lilas);
+    color: var(--verde-claro);
+    text-shadow: 0 0 5px var(--verde-claro);
 }
 
-/* Seção de Destaque (Hero) */
-.hero {
-    height: 60vh;
+/* Efeito Parallax na Home */
+.parallax {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09');
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: var(--verde-azulado);
     color: white;
-    padding: 20px;
-}
-
-/* Estilo geral das seções */
-.content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 20px;
     text-align: center;
 }
 
-.bg-alt {
-    background-color: #ffffff; /* Fundo branco para diferenciar seções */
+/* Efeito Degradê (Gradient) em caixas */
+.content-box {
+    background: linear-gradient(135deg, var(--verde-azulado), var(--lilas));
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-h2 {
-    color: var(--verde-azulado);
-    margin-bottom: 20px;
-}
-
-ul {
-    display: inline-block;
-    text-align: left;
-}
-
-/* Cards da Economia Circular */
-.cards {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+/* Layout Responsivo para os cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
-    background-color: var(--lilas);
+    background: var(--branco);
+    border-bottom: 5px solid var(--verde-claro);
     padding: 20px;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 150px;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Hover effect */
 }
 
-/* Botão e Interação */
-button {
-    background-color: var(--verde-azulado);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    margin-top: 20px;
-    transition: transform 0.2s;
+.card:hover {
+    transform: translateY(-10px); /* Sobe um pouco ao passar o mouse */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
-button:hover {
-    transform: scale(1.05);
+/* Estilo das seções */
+.info-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-    color: var(--verde-azulado);
-    padding: 10px;
-    border: 2px dashed var(--lilas);
-}
-
-/* Responsividade: Ajustes para celular */
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-    }
-    nav ul {
-        margin-top: 10px;
-    }
-    nav ul li a {
-        margin: 0 10px;
-    }
-}
+.alt-bg { background-color: #f4f4f4; }
