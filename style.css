@@ -1,131 +1,131 @@
-/* Definição de cores e fontes */
+/* Variáveis de Cores para facilitar */
 :root {
-    --verde-azulado: #3b9696;
-    --lilas: #c8a2c8;
-    --verde-claro: #c4fac4;
-    --branco: #ffffff;
+    --verde-azulado: #2D5A5A;
+    --lilas: #C8A2C8;
+    --verde-claro: #90EE90;
+    --branco: #FFFFFF;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth; /* Deixa o deslizar do menu suave */
 }
 
-/* Efeito de Carregamento (Loading Spinner) */
-#loader {
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 2.0;
+}
+
+/* LOADING SPINNER */
+#loader-container {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    width: 100%; height: 100%;
+    background: var(--branco);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    z-index: 2000;
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
+    width: 50px; height: 50px;
     border: 5px solid var(--lilas);
     border-top: 5px solid var(--verde-azulado);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+@keyframes spin { 100% { transform: rotate(360deg); } }
 
-/* Menu Responsivo */
+/* MENU */
 header {
-    background-color: var(--verde-azulado);
-    padding: 1rem;
+    background: var(--verde-azulado);
+    padding: 15px;
     position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
+    width: 100%; top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1100px; margin: 0 auto;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+nav ul { display: flex; list-style: none; }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-weight: bold;
     transition: 0.3s; /* Suaviza o hover */
 }
 
-/* Hover Effect no Menu */
+/* Efeito Hover no Menu */
 nav ul li a:hover {
     color: var(--verde-claro);
-    text-shadow: 0 0 5px var(--verde-claro);
+    transform: scale(1.1);
 }
 
-/* Efeito Parallax na Home */
+/* EFEITO PARALLAX */
 .parallax {
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09');
+    background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1350&q=80');
     height: 100vh;
-    background-attachment: fixed;
+    background-attachment: fixed; /* O segredo do Parallax */
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+    display: flex; justify-content: center; align-items: center;
 }
 
-/* Efeito Degradê (Gradient) em caixas */
-.content-box {
-    background: linear-gradient(135deg, var(--verde-azulado), var(--lilas));
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+/* DEGRADÊ NO TEXTO */
+.text-gradient {
+    background: linear-gradient(to right, var(--verde-claro), var(--lilas));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
 }
 
-/* Layout Responsivo para os cards */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    background: var(--branco);
-    border-bottom: 5px solid var(--verde-claro);
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease; /* Hover effect */
-}
-
-.card:hover {
-    transform: translateY(-10px); /* Sobe um pouco ao passar o mouse */
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-}
-
-/* Estilo das seções */
-.info-section {
+/* SEÇÕES DE CONTEÚDO */
+.content-section {
     padding: 80px 20px;
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     text-align: center;
 }
 
-.alt-bg { background-color: #f4f4f4; }
+.bg-lilas { background-color: #f9f2f9; }
+
+/* CARDS COM HOVER */
+.card-container {
+    display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 5px solid var(--verde-azulado);
+    width: 250px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background: var(--verde-claro);
+}
+
+/* DECORAÇÕES */
+.decor-folha { font-size: 2rem; display: block; margin: 10px; }
+
+/* RESPONSIVIDADE (Celulares) */
+@media (max-width: 600px) {
+    nav ul { display: none; } /* Esconde menu no mobile para simplificar */
+    .text-gradient { font-size: 2.5rem; }
+}

@@ -1,37 +1,33 @@
-// 1. Esconder o Loading Spinner após carregar a página
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    // Adiciona um pequeno atraso para dar efeito
+// Espera todo o site carregar para sumir com o Spinner
+window.addEventListener('load', function() {
+    const loader = document.getElementById('loader-container');
     setTimeout(() => {
-        loader.style.display = 'none';
-    }, 1000);
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+    }, 1500); // 1.5 segundos de loading para dar um charme
 });
 
-// 2. Efeito Interativo no Botão
-const botao = document.getElementById('btnInterativo');
+// Interatividade do Botão (Slide 8)
+const btn = document.getElementById('btn-interativo');
+const msg = document.getElementById('mensagem-sustentavel');
 
-botao.addEventListener('click', () => {
-    // Array de frases aleatórias sobre sustentabilidade
-    const dicas = [
-        "Reduza o tempo no banho!",
-        "Desligue as luzes ao sair do quarto.",
-        "Use sacolas retornáveis sempre que puder.",
-        "Recicle seu lixo eletrônico em postos específicos."
-    ];
-    
-    const dicaAleatoria = dicas[Math.floor(Math.random() * dicas.length)];
-    
-    // Altera o estilo do botão e mostra a mensagem
-    botao.style.backgroundColor = '#c8a2c8'; // Muda para lilás
-    alert("Dica de Sustentabilidade: " + dicaAleatoria);
-});
+const compromissos = [
+    "Vou reduzir meu consumo de plástico esta semana! 🥤",
+    "Vou desligar os aparelhos da tomada ao sair! 🔌",
+    "Vou separar o lixo orgânico do reciclável! ♻️",
+    "Vou plantar uma semente ou cuidar de uma planta hoje! 🌻"
+];
 
-// 3. Efeito de Scroll Suave para o menu
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+btn.addEventListener('click', function() {
+    // Escolhe uma frase aleatória
+    const sorteio = Math.floor(Math.random() * compromissos.length);
+    msg.innerText = compromissos[sorteio];
+    
+    // Muda a cor do fundo da mensagem como feedback visual
+    msg.style.color = "#2D5A5A";
+    msg.style.fontWeight = "bold";
+    
+    // Pequeno efeito no botão ao clicar
+    btn.style.transform = "scale(0.9)";
+    setTimeout(() => btn.style.transform = "scale(1)", 100);
 });

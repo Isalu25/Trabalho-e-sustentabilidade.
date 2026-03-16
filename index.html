@@ -3,72 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuro Sustentável - Trabalho Escolar</title>
+    <title>Futuro Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="loader">
+    <div id="loader-container">
         <div class="spinner"></div>
+        <p>Cultivando ideias...</p>
     </div>
 
     <header>
         <nav>
-            <div class="logo">EcoEnsino</div>
+            <div class="logo">🌿 SustentaEco</div>
             <ul>
                 <li><a href="#home">Início</a></li>
-                <li><a href="#circular">Economia Circular</a></li>
-                <li><a href="#producao">Produção</a></li>
-                <li><a href="#contato">Saiba Mais</a></li>
+                <li><a href="#sobre">Conceito</a></li>
+                <li><a href="#economia">Circular</a></li>
+                <li><a href="#acao">Ação</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="parallax section-1">
-            <div class="content-box">
-                <h1>Futuro Sustentável</h1>
-                <p>O equilíbrio entre Produção e Meio Ambiente</p>
+        
+        <section id="home" class="parallax">
+            <div class="overlay">
+                <h1 class="text-gradient">Futuro Sustentável</h1>
+                <p>Equilíbrio entre Produção e Meio Ambiente</p>
             </div>
         </section>
 
-        <section id="intro" class="info-section">
-            <h2>Bem-vindo à Jornada Verde</h2>
-            <p>Entenda como podemos transformar nossa forma de consumir e produzir para proteger o planeta.</p>
+        <section id="sobre" class="content-section">
+            <h2>Por que mudar agora? 🌸</h2>
+            <p>Nossa produção atual precisa encontrar o equilíbrio com a natureza.</p>
+            <ul class="bullet-points">
+                <li>Preservação de recursos naturais.</li>
+                <li>Redução de impactos climáticos.</li>
+                <li>Garantia de futuro para as próximas gerações.</li>
+            </ul>
         </section>
 
-        <section id="circular" class="info-section alt-bg">
-            <h2>O que é Economia Circular?</h2>
-                        <div class="grid-container">
+        <section id="economia" class="content-section bg-lilas">
+            <h2>Economia Circular 🔄</h2>
+            <div class="card-container">
                 <div class="card">
                     <h3>Produção</h3>
-                    <p>Design focado em durabilidade e reaproveitamento.</p>
+                    <p>Criar produtos que durem e sejam recicláveis.</p>
                 </div>
                 <div class="card">
-                    <h3>Uso Consciente</h3>
-                    <p>Consumir apenas o necessário e cuidar dos produtos.</p>
+                    <h3>Uso</h3>
+                    <p>Consumo consciente e reaproveitamento.</p>
                 </div>
                 <div class="card">
                     <h3>Reciclagem</h3>
-                    <p>Transformar o que seria lixo em matéria-prima novamente.</p>
+                    <p>Transformar resíduos em novos recursos.</p>
                 </div>
             </div>
+            <span class="decor-folha">🌿</span>
         </section>
 
-        <section class="info-section">
-            <h2>Pilar da Sustentabilidade</h2>
-            <ul>
-                <li>Redução de emissão de CO2</li>
-                <li>Preservação de recursos hídricos</li>
-                <li>Justiça social na produção</li>
-            </ul>
-            <button id="btnInterativo">Clique para uma dica verde!</button>
+        <section class="content-section">
+            <h2>O Papel da Tecnologia 🌻</h2>
+            <p>Como a inovação ajuda a poluir menos e produzir mais.</p>
+        </section>
+
+        <section id="acao" class="content-section">
+            <h2>Faça sua parte!</h2>
+            <p>Clique no botão abaixo para receber um compromisso sustentável.</p>
+            <button id="btn-interativo">Gerar Compromisso 🍃</button>
+            <p id="mensagem-sustentavel"></p>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 - Desenvolvido por um Estudante do 3º Ano</p>
+        <p>Trabalho Escolar - 3º Ano Médio &copy; 2026</p>
     </footer>
 
     <script src="script.js"></script>
