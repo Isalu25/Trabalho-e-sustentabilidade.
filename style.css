@@ -80,7 +80,22 @@ nav ul li a:hover {
     background-size: cover;
     display: flex; justify-content: center; align-items: center;
 }
+.parallax p {
+    font-family: 'Segoe UI', sans-serif; /* Altere para a fonte que desejar */
+    font-size: 1.5rem;                  /* Tamanho da letra */
+    color: var(--branco);               /* Usa a variável de cor branca que você já tem */
+    font-weight: 300;                   /* Deixa a letra mais fina e elegante */
+    margin-top: 5px;                   /* Espaço entre o título grande e esta frase */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Sombra para destacar do fundo */
+    letter-spacing: 1px;                /* Espaçamento entre as letras */
+}
 
+/* Garante que o container de texto esteja organizado em coluna */
+.parallax {
+    flex-direction: column; 
+    text-align: center;
+    padding: 0 20px;
+}
 /* DEGRADÊ NO TEXTO */
 .text-gradient {
     background: linear-gradient(to right, var(--verde-claro), var(--lilas));
